@@ -8,7 +8,8 @@
 </head>
 <body>
   {% if user.is_authenticated %}
-    <p>{{user.username}}</p>
+    <a>{{user.username}}</a>
+    <a href="{% url 'posts:create' %}">글쓰기</a>
     <a href="{% url 'accounts:logout' %}">로그아웃</a>
   {% else %}
     <a href="{% url 'accounts:signup' %}">회원가입</a>

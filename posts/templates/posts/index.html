@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+  <h1>index</h1>
+  <hr>
+  {% for post in posts %}
+    <h3>{{post.title}}</h3>
+    <h5>{{post.like_users.all | length}}</h5>
+    <a href="{% url 'posts:detail' post.id %}">상세보기</a>
+    <hr>
+  {% endfor %}
+{% endblock %}

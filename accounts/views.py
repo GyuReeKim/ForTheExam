@@ -26,7 +26,7 @@ def login(request):
             # request는 익명의 data를 갖고있기 때문에 form에서 user정보를 가져와야 한다.
             # get_user()는 함수
             auth_login(request, form.get_user())
-            return redirect('accounts:base')
+            return redirect('posts:index')
     else:
         form = AuthenticationForm()
     context ={
@@ -37,6 +37,3 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('accounts:login')
-
-def base(request):
-    return render(request, 'accounts/base.html')
